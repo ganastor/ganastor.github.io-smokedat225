@@ -578,18 +578,49 @@
       </div>
     </div>
     <div class="col-md-4">
-      <h3>Opening Hours</h3>
+      <h3>Map</h3>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBBcRTjarKchUdcE9Ptqyc7gAYLcBzdBfE&callback=initMap" type="text/javascript"></script>
+			<div id="map" style="height: 300px; width: 375px;"></div>
+			<script type="text/javascript">
+				var locations = [
+				['Saturday', 43.149576, -88.077019, 1],
+				['Sunday', 43.185790, -88.125846, 2],
+				];
+
+				var map = new google.maps.Map(document.getElementById('map'), {
+				zoom: 10,
+				center: new google.maps.LatLng(43.17, -88.10),
+				mapTypeId: google.maps.MapTypeId.ROADMAP
+				});
+
+				var infowindow = new google.maps.InfoWindow();
+
+				var marker, i;
+
+				for (i = 0; i < locations.length; i++) { 
+				marker = new google.maps.Marker({
+					position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+					map: map
+				});
+
+				google.maps.event.addListener(marker, 'click', (function(marker, i) {
+					return function() {
+					infowindow.setContent(locations[i][0]);
+					infowindow.open(map, marker);
+					}
+				})(marker, i));
+				}
+			</script>
+    </div>
+    <div class="col-md-4">
+      <h3>Open Hours</h3>
       <div class="contact-item">
         <p>Saturday: 10:30 AM - 7:30 PM</p>
         <p>Sunday: 11:00 AM - 06:30 PM</p>
-      </div>
-    </div>
-    <div class="col-md-4">
       <h3>Contact Info</h3>
-      <div class="contact-item">
         <p><a href="tel:+12629332020">Phone: +262.933.2020</p>
-        <p><a href="mailto:smoked.at.225@gmail.com">Email: Smoked.at.225@gmail.com</p>
-      </div>
+        <p><a href="mailto:smoked.at.225@gmail.com">Email: Smoked.at.225@gmail.com</a></p>
+	  </div>
     </div>
   </div>
   <div class="container-fluid text-center copyrights">
