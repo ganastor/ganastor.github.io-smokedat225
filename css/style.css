@@ -237,6 +237,9 @@ header .intro-text {
 	line-height: 24px;
 	margin: 15px 0 30px;
 }
+#about a {
+	color: #333;
+}
 /* Menu Section */
 #restaurant-menu {
 	padding: 0 0 60px 0;
