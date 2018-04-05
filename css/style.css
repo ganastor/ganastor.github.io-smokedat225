@@ -171,6 +171,11 @@ a:focus, .btn:focus, .btn:active:focus, .btn.active:focus, .btn.focus, .btn:acti
 	background-color: #628d0f;
 }
 /* Header Section */
+@media only screen and (max-width : 600px) {
+
+.intro-text h1 img { width: 90% }
+
+}
 .intro {
 	display: table;
 	width: 100%;
