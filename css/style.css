@@ -225,6 +225,7 @@ header .intro-text {
 #about .about-text {
 	margin-left: 10px;
 }
+/*
 #about .about-img {
 	display: inline-block;
 	position: relative;
@@ -238,6 +239,17 @@ header .intro-text {
 	bottom: 8px;
 	left: 8px;
 	border: 1px solid rgba(255, 255, 255, 0.5);
+}
+*/
+#about .about-img {
+	display: inline-block;
+	position: relative;
+}
+#about .about-img:before {
+	display: block;
+	content: '';
+	position: absolute;
+	bottom: 8px;
 }
 #about p {
 	line-height: 24px;
